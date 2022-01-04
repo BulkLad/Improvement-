@@ -1,0 +1,33 @@
+class Coin:
+  def __init__(self, value, singular_name, plural_name, name='',coin_count=0):
+    self.value = value
+    self.singular_name = singular_name
+    self.plural_name = plural_name
+    self.coin_count = coin_count
+    self.name = name
+
+  def is_it_plural(self):
+      if self.coin_count > 1:
+        self.name = self.plural_name
+      else:
+        self.name = self.singular_name
+
+dollar = Coin(100, 'Dollar', 'Dollars')
+quarter = Coin(25, 'Quarter', 'Quarters')
+dime = Coin(10, 'Dime', 'Dimes')
+nickel = Coin(5, 'Nickel', 'Nickels')
+penny = Coin(1, 'Penny', 'Pennies')
+
+wallet = [dollar, quarter, dime, nickel, penny]
+
+total = 1659 #this will be your total coins in Pennies
+
+for i in wallet:
+  while total >= i.value:
+    total = total - i.value
+    i.coin_count += 1
+
+for i in wallet:
+  if i.coin_count >0:
+    i.is_it_plural()
+    print('{} {}'.format(i.coin_count, i.name))
