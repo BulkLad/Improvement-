@@ -1,0 +1,66 @@
+total = int(input())
+
+temp_holder = total
+dollars = 0
+quarters = 0
+dimes = 0
+nickels = 0
+pennies = 0
+
+while total >= 100:
+   total = total - 100
+   dollars += 1
+
+while total >= 25:
+   total = total - 25
+   quarters += 1
+   
+while total >= 10:
+   total = total - 10
+   dimes += 1
+
+while total >= 5:
+   total = total - 5
+   nickels += 1
+   
+while total > 0:
+   total = total - 1
+   pennies += 1
+   
+
+if dollars > 0:
+   if dollars == 1:
+      print('{} Dollar'.format(dollars))
+      
+   else:
+      print('{} Dollars'.format(dollars))
+   
+if quarters > 0:
+   if quarters == 1:
+      print('{} Quarter'.format(quarters))
+   
+   else:
+      print('{} Quarters'.format(quarters))
+   
+   
+if dimes > 0:
+   if dimes == 1:
+      print('{} Dime'.format(dimes))
+      
+   else:
+      print('{} Dimes'.format(dimes))
+   
+if nickels > 0:
+   if nickels == 1:
+      print('{} Nickel'.format(nickels))
+   
+   else:
+      print('{} Nickels'.format(nickels))
+
+if pennies > 0:
+   if pennies == 1: 
+      print('{} Penny'.format(pennies))
+   
+   else: 
+      print('{} Pennies'.format(pennies))
+      
